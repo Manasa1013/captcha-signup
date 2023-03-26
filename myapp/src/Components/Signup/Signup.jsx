@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEyeSlash,
-  faEye,
-  faTimes,
-} from "@fortawesome/fontawesome-free-solid";
+import { faEyeSlash, faEye } from "@fortawesome/fontawesome-free-solid";
 import "./Signup.css";
 import { useToast } from "../../Contexts/ToastContext";
 export function Signup() {
@@ -128,8 +124,10 @@ export function Signup() {
     <div className="wrapper">
       <section className="flex-container">
         <form onSubmit={(e) => handleSubmit(e)} method="post">
+          <h1 id="login--heading" className="">
+            Sign up
+          </h1>
           <hr className="dashed-line"></hr>
-
           <div id="name--container">
             <label htmlFor="name--input" className="label">
               Username
@@ -202,7 +200,7 @@ export function Signup() {
               type={showPassword ? "text" : "password"}
               id="password--input"
               className="input"
-              name="password"
+              name="current-password"
               value={field.password}
               placeholder="theWay^OfWater2"
               onInput={(e) => {

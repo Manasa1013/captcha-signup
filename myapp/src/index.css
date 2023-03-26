@@ -39,7 +39,34 @@ body {
   font-family: 'Titillium Web', sans-serif;
   box-sizing: border-box;
 }
+.wrapper {
+  width: 100%;
+  color: var(--text-primary);
+  padding: 2rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.heading{
+  color: var(--background-primary);
+
+}
+
+.link--primary {
+  color: var(--secondary-green);
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-size: 1rem;
+
+}
+
+.link--primary:focus {
+  text-decoration: underline;
+}
 @media (prefers-color-scheme: dark) {
   .dark {
     background-color: var(--dark-secondary-bg);
