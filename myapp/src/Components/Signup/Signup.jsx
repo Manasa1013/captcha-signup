@@ -7,8 +7,10 @@ import {
   faTimes,
 } from "@fortawesome/fontawesome-free-solid";
 import "./Signup.css";
+import { useToast } from "../../Contexts/ToastContext";
 export function Signup() {
   const navigate = useNavigate();
+  const { showToast } = useToast();
   const [field, setField] = useState({
     userName: "",
     emailID: "",
@@ -49,12 +51,12 @@ export function Signup() {
 
   function validateCaptcha() {
     if (!captchaInput) {
-      console.log("Enter captcha to sign up");
+      showToast("Enter captcha to sign up");
       return false;
     } else if (captchaInput === captcha) {
       return true;
     } else if (captchaInput !== captcha) {
-      console.log("Must match with the captcha text");
+      showToast("Must match with the captcha text");
       return false;
     }
   }
@@ -90,16 +92,16 @@ export function Signup() {
       field.emailID.length <= 0 ||
       field.password.length <= 0
     ) {
-      console.log("Enter details to signup");
+      showToast("Enter details to signup");
     } else if (
       errorField.nameError.length > 0 ||
       errorField.emailError.length > 0 ||
       errorField.passwordError.length > 0
     ) {
-      console.log("Please correct errors at the fields");
+      showToast("Please correct errors at the fields");
     } else {
       console.log(validateCaptcha());
-      console.log("Successfully signed up");
+      showToast("Successfully signed up");
       navigate("/home");
       resetValues();
     }
