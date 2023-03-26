@@ -10,7 +10,14 @@
   --primary-green: #3ff39f;
   --secondary-green: #047857;
   --error-red: #E87C03;
-
+  --dark-primary-bg: #0f172a;
+  --dark-secondary-bg: #1e293b;
+  --dark-para-text: #94a3b8;
+  --dark-heading-text: #fff;
+  --primary-bg: #ffffff;
+  --secondary-bg: #f5f5f5;
+  --para-text: #64748b;
+  --heading-text: #0f172a;
 }
 
 html {
@@ -31,4 +38,35 @@ body {
 *::before {
   font-family: 'Titillium Web', sans-serif;
   box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark {
+    background-color: var(--dark-secondary-bg);
+    color: var(--dark-para-text);
+    outline-color: var(--para-text);
+    border-color: var(--para-text);
+  }
+
+  .light {
+    background-color: var(--secondary-bg);
+    color: var(--para-text);
+    outline-color: var(--dark-para-text);
+    border-color: var(--dark-para-text);
+  }
+
+  .darker-area {
+    background-color: var(--dark-primary-bg);
+    color: var(--dark-heading-text);
+    outline-color: var(--heading-text);
+    border-color: var(--heading-text);
+  }
+
+  .lighter-area {
+    background-color: var(--primary-bg);
+    color: var(--heading-text);
+    outline-color: var(--dark-heading-text);
+    border-color: var(--dark-heading-text);
+  }
+
 }
